@@ -3,7 +3,7 @@ Linde-Buzo-Gray / Generalized Lloyd algorithm implementation in Python *3*.
 Heuristic process that can be used to generate cluster points from a big amount of multidimensional vectors.
 """
 
-import dist
+import math
 from functools import reduce
 from collections import defaultdict
 
@@ -88,7 +88,7 @@ def split_codebook(data, codebook, epsilon, initial_avg_dist):
             min_dist = None
             closest_c_index = None
             for i_c, c in enumerate(codebook):  # for each codevector
-                d = dist.euclid_squared(vec, c)
+                d = euclid_squared(vec, c)
                 if min_dist is None or d < min_dist:    # found new closest codevector
                     min_dist = d
                     closest_c_list[i] = c
@@ -162,7 +162,7 @@ def avg_distortion_c0(c0, data, size=None):
     """
     size = size or _size_data
     return reduce(lambda s, d:  s + d / size,
-                  (dist.euclid_squared(c0, vec)
+                  (euclid_squared(c0, vec)
                    for vec in data),
                   0.0)
 
@@ -178,6 +178,14 @@ def avg_distortion_c_list(c_list, data, size=None):
     """
     size = size or _size_data
     return reduce(lambda s, d:  s + d / size,
-                  (dist.euclid_squared(c_i, data[i])
+                  (euclid_squared(c_i, data[i])
                    for i, c_i in enumerate(c_list)),
                   0.0)
+
+
+def euclid_squared(a, b):
+    return sum((x_a - x_b) ** 2 for x_a, x_b in zip(a, b))
+
+
+# def euclid(a, b):
+#     return math.sqrt(euclid_squared(a, b))
