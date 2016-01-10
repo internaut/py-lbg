@@ -8,6 +8,8 @@ be also useful if you want to cluster a large amount of points on a map.
 
 See also: http://mkonrad.net/projects/gen_lloyd.html
 
+See also my original [Java implementation](https://github.com/internaut/JGenLloydCluster).
+
 The repository also contains an IPython notebook to visualize how this algorithm works.
 
 The source-code is provided under [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
