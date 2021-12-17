@@ -1,7 +1,7 @@
 # Python Implementation for Linde-Buzo-Gray / Generalized Lloyd Algorithm
 
 This is a small set of Python functions that implement the
-[Generalized-Lloyd or Linde-Buzo-Gray Algorithm](http://en.wikipedia.org/wiki/Linde%96Buzo%96Gray_algorithm)
+[Generalized-Lloyd or Linde-Buzo-Gray Algorithm](https://en.wikipedia.org/wiki/Linde%E2%80%93Buzo%E2%80%93Gray_algorithm)
 for vector quantization. It allows clustering of vectors of any dimension. This is helpful for example for
 image classification when using the SIFT or SURF algorithms where you can cluster the feature vectors. It might
 be also useful if you want to cluster a large amount of points on a map.
